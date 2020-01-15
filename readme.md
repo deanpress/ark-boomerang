@@ -1,5 +1,12 @@
 # ARK Boomerang
 
+A tool thought up by ARK's Justin Renken to easily:
+1. Generate multiple wallets
+2. Send a specified amount of coins to the generated wallets
+3. Send back the coins from the generated wallets to the original sender
+
+This allows you to generate wallets for promotional campaigns (such as giveaways) where the receiving users have to send the coins out of their promotional wallet before a certain date. If they don't complete this "claim", the coins are returned to the promoter.
+
 ## Instructions
 
 1. Download and install Node.js Runtime Engine at https://nodejs.org/en/
