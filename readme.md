@@ -16,8 +16,19 @@
 
 For additional help using ARK Boomerang, email: justin@ark.io
 
-THERE ARE RISKS USING THIS APPLICATION. MISTAKES CAN RESULT IN LOSS OF FUNDS. USE AT YOUR OWN RISK.
+## Flyer Images
+
+### Front
+![](https://github.com/deanpress/ark-boomerang/blob/master/static/Flyer_Front.jpg)
+
+### Back
+![](https://github.com/deanpress/ark-boomerang/blob/master/static/Flyer_Back.jpg)
+
+
+## Disclaimer
 
 This application was created by Dean van Dugteren of nOS.io and Justin Renken of ARK.io.
+
+THERE ARE RISKS USING THIS APPLICATION. MISTAKES CAN RESULT IN LOSS OF FUNDS. USE AT YOUR OWN RISK.
 
 IT IS YOUR RESPONSIBILITY TO TAKE PROPER PRECAUTIONS TO KEEP PASSPHRASES AND FUNDS SAFE. DO NOT KEEP FUNDS IN HOT WALLET ADDRESSES OR FRESHLY GENERATED ADDRESSES FOR LONGER THAN NECESSARY.
