@@ -27,7 +27,7 @@ For additional help using ARK Boomerang, email: justin@ark.io
 
 ## Disclaimer
 
-This application was created by Dean van Dugteren of nOS.io and Justin Renken of ARK.io.
+This application was created by Dean van Dugteren of [nOS.io](https://nos.io) and Justin Renken of [ARK.io](https://ark.io).
 
 THERE ARE RISKS USING THIS APPLICATION. MISTAKES CAN RESULT IN LOSS OF FUNDS. USE AT YOUR OWN RISK.
 
