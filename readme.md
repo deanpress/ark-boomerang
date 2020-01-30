@@ -19,7 +19,7 @@ This allows you to generate wallets for promotional campaigns (such as giveaways
 8. Execute `node send.js` this will distrubute ARK from your ARK Boomerang hot wallet address to the freshly generated addresses.
 9. Distribute the freshly generated passphrases to your audience and tell them how long they have left to move the funds.
 10. Execute `node claim.js` when time runs out, this will reclaim any unmoved funds back to the ARK Boomerang hot wallet address you specified.
-11. Move the reclaimed ARK from your hot wallet address to a secure location until you are ready to use ARK Boomerang again.ANG AGAIN.
+11. Move the reclaimed ARK from your hot wallet address to a secure location until you are ready to use ARK Boomerang again. AND AGAIN.
 
 For additional help using ARK Boomerang, email: justin@ark.io
 
