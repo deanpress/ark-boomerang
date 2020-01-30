@@ -1,49 +1,40 @@
-require("dotenv").config({ throwHttpErrors: false });
+require("dotenv").config();
 
 const crypto = require("@arkecosystem/crypto");
 const fs = require("fs");
-const got = require("got");
+const helpers = require("./helpers");
 
+// Load wallets
 var wallets = JSON.parse(fs.readFileSync("wallets.json", "utf8"));
 
+// Set network configuration
 crypto.Managers.configManager.setFromPreset(process.env.NETWORK);
 
 async function send() {
+  
+  // Run for each wallet
   for (const wallet of wallets) {
     let tx;
+
+    // Generate transfer transaction
     tx = crypto.Transactions.BuilderFactory.transfer()
       .network(23)
       .recipientId(wallet.address)
       .amount(process.env.SEND_AMOUNT)
       .fee(process.env.FEE)
       .sign(process.env.PASSPHRASE);
+
+    // If SECOND_PASSPHRASE is set for multi-sig, include it in the transaction signing process
     if (process.env.SECOND_PASSPHRASE) {
       tx = tx.secondSign(process.env.SECOND_PASSPHRASE);
     }
 
+    // The struct is the transaction object formatted for API requests
     tx = tx.getStruct();
-    await postTx(tx);
+
+    await helpers.postTx(tx);
   }
 }
 
-async function postTx(tx) {
-  const res = await got.post(process.env.API + "/transactions", {
-    json: { transactions: [tx] },
-    throwHttpErrors: false
-  });
-
-  const json = JSON.parse(res.body);
-
-  if (res.statusCode === 200 && Object.keys(json.data.accept).length) {
-    console.log(
-      `Transaction success: ${tx.id} ( ${tx.amount} from ${tx.senderPublicKey} to ${tx.recipientId} )`
-    );
-  } else {
-    console.log(
-      `Transaction failed:  ${tx.id} ( ${tx.amount} from ${tx.senderPublicKey} to ${tx.recipientId} )`
-    );
-    console.log(json.errors);
-  }
-}
-
+// Run send() function
 send();
