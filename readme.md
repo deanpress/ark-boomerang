@@ -10,16 +10,17 @@ This allows you to generate wallets for promotional campaigns (such as giveaways
 ## Instructions
 
 1. Download and install Node.js Runtime Engine at https://nodejs.org/en/
-2. Extract these files to a directory you can access via your cli
-3. In your cli, navigate to the directory you extracted the files to.
-4. Execute `npm install` from within that directory.
-5. Create an .env file based on `.env.example` and modify it to your desired parameters.
-6. Send ARK to the address corresponding to the parameters in the .env. This loads your ARK Boomerang hot wallet address with ARK.
-7. Execute `node generate.js` in cli. This will create a new file with the freshly generated addresses.
-8. Execute `node send.js` this will distrubute ARK from your ARK Boomerang hot wallet address to the freshly generated addresses.
-9. Distribute the freshly generated passphrases to your audience and tell them how long they have left to move the funds.
-10. Execute `node claim.js` when time runs out, this will reclaim any unmoved funds back to the ARK Boomerang hot wallet address you specified.
-11. Move the reclaimed ARK from your hot wallet address to a secure location until you are ready to use ARK Boomerang again. AND AGAIN.
+2. Install Yarn: https://classic.yarnpkg.com/en/docs/install
+3. Extract these files to a directory you can access via your cli
+4. In your cli, navigate to the directory you extracted the files to.
+5. Execute `yarn install` from within that directory.
+6. Create an .env file based on `.env.example` and modify it to your desired parameters.
+7. Send ARK to the address corresponding to the parameters in the .env. This loads your ARK Boomerang hot wallet address with ARK.
+8. Execute `node generate.js` in cli. This will create a new file with the freshly generated addresses.
+9. Execute `node send.js` this will distrubute ARK from your ARK Boomerang hot wallet address to the freshly generated addresses.
+10. Distribute the freshly generated passphrases to your audience and tell them how long they have left to move the funds.
+11. Execute `node claim.js` when time runs out, this will reclaim any unmoved funds back to the ARK Boomerang hot wallet address you specified.
+12. Move the reclaimed ARK from your hot wallet address to a secure location until you are ready to use ARK Boomerang again. AND AGAIN.
 
 For additional help using ARK Boomerang, email: justin@ark.io
 
