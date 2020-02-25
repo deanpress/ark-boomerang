@@ -14,7 +14,7 @@ This allows you to generate wallets for promotional campaigns (such as giveaways
 3. Extract these files to a directory you can access via your cli
 4. In your cli, navigate to the directory you extracted the files to.
 5. Execute `yarn install` from within that directory.
-6. Create an .env file based on `.env.example` and modify it to your desired parameters.
+6. Create a .env file based on `.env.example` and modify it to your desired parameters.
 7. Send ARK to the address corresponding to the parameters in the .env. This loads your ARK Boomerang hot wallet address with ARK.
 8. Execute `node generate.js` in cli. This will create a new file with the freshly generated addresses.
 9. Execute `node send.js` this will distrubute ARK from your ARK Boomerang hot wallet address to the freshly generated addresses.
