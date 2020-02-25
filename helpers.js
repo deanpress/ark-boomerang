@@ -27,6 +27,7 @@ const postTx = async (tx) => {
 }
 
 const getWallet = async (passphrase) => {
+    // Get API wallet data (most importantly the nonce & balance) from passphrase
     try {
         address = crypto.Identities.Address.fromPassphrase(passphrase);
         const res = await got(
