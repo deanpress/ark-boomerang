@@ -1,0 +1,14 @@
+{
+  "name": "ark-boomerang",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/deanpress/ark-boomerang",
+  "author": "Dean van Dugteren <hello@dean.press>",
+  "license": "MIT",
+  "dependencies": {
+    "@arkecosystem/crypto": "^2.6.10",
+    "bip39": "^3.0.2",
+    "dotenv": "^8.2.0",
+    "got": "^10.6.0"
+  }
+}

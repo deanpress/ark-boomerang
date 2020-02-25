@@ -9,6 +9,7 @@ const helpers = require("./helpers");
 var wallets = JSON.parse(fs.readFileSync("wallets.json", "utf8"));
 
 crypto.Managers.configManager.setFromPreset(process.env.NETWORK);
+crypto.Managers.configManager.setHeight(11273000);
 
 async function claim() {
   
@@ -24,6 +25,7 @@ async function claim() {
     // Call API for balance
     const res = await got.get(process.env.API + "/wallets/" + wallet.address);
     const balance = JSON.parse(res.body).data.balance;
+    const nonce = Number(JSON.parse(res.body).data.nonce);
     const amt = crypto.Utils.BigNumber.make(balance)
       .minus(process.env.FEE)
       .toString();
@@ -33,7 +35,10 @@ async function claim() {
       let tx;
       tx = crypto.Transactions.BuilderFactory.transfer()
         .network(23)
+        .version(2)
+        .nonce(nonce + 1)
         .recipientId(receiver)
+        .vendorField("Boomerang Claim")
         .amount(amt)
         .fee(process.env.FEE)
         .sign(wallet.passphrase)

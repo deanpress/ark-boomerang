@@ -9,17 +9,22 @@ var wallets = JSON.parse(fs.readFileSync("wallets.json", "utf8"));
 
 // Set network configuration
 crypto.Managers.configManager.setFromPreset(process.env.NETWORK);
+crypto.Managers.configManager.setHeight(11273000);
 
 async function send() {
-  
+  const myWallet = await helpers.getWallet(process.env.PASSPHRASE);
+  let nonce = myWallet.nonce;
   // Run for each wallet
   for (const wallet of wallets) {
     let tx;
-
+    nonce++;
     // Generate transfer transaction
     tx = crypto.Transactions.BuilderFactory.transfer()
       .network(23)
+      .version(2)
+      .nonce(nonce)
       .recipientId(wallet.address)
+      .vendorField("Boomerang Send")
       .amount(process.env.SEND_AMOUNT)
       .fee(process.env.FEE)
       .sign(process.env.PASSPHRASE);

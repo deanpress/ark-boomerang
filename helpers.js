@@ -1,5 +1,6 @@
 require("dotenv").config();
 const got = require("got");
+const crypto = require("@arkecosystem/crypto");
 
 const postTx = async (tx) => {
 
@@ -25,6 +26,21 @@ const postTx = async (tx) => {
     }
 }
 
+const getWallet = async (passphrase) => {
+    try {
+        address = crypto.Identities.Address.fromPassphrase(passphrase);
+        const res = await got(
+            `${process.env.API}/wallets/${address}`
+        ).json();
+
+        return res.data;
+
+    } catch (e) {
+        throw new Error(e);
+    }
+}
+
 module.exports = {
-    postTx
+    postTx,
+    getWallet
 };
